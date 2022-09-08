@@ -1,0 +1,13 @@
+# copied and updated from https://github.com/louislam/uptime-kuma/tree/k8s-unofficial/kubernetes
+apiVersion: v1
+kind: Service
+metadata:
+  name: uptime-kuma
+spec:
+  ports:
+  - name: http
+    port: 3001
+    protocol: TCP
+    targetPort: 3001
+  selector:
+    app.kubernetes.io/name: uptime-kuma
